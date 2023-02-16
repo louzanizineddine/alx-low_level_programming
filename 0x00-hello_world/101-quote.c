@@ -8,6 +8,6 @@
 int main(void)
 {
 char m[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-syscall(SYS_write, 1, m, sizeof(m));
+syscall(SYS_write, STDERR_FILENO, m, sizeof(m));
 return (0);
 }
