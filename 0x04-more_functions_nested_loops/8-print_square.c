@@ -1,26 +1,26 @@
 #include "main.h"
 
 /**
- * print_square - print a square 
- * @n: number of #
- * Return: void
+ * print_square - prints a square, followed by a new line;
+ * @n: n of the square
  */
-
 void print_square(int n)
 {
-	int i = 0, m;
-
-	while (i < n && n > 0)
+	if (n <= 0)
 	{
-		m = 0;
-		while (m < n)
+		_putchar('\n');
+	} else
+	{
+		int i, j;
+
+		for (i = 0; i < n; i++)
 		{
-			_putchar('#');
-			m++;
+			for (j = 0; j < n; j++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
 		}
-		_putchar('\n');
-		i++;
 	}
-	if (i == 0)
-		_putchar('\n');
 }
+
