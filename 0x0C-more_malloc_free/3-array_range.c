@@ -1,32 +1,34 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * _calloc - Allocates memory for an array of n elemenst
- * @nmemb: The number of elements.
- * @size: The byte size of each array element.
+ * array_range- fill an array with ordered values.
+ * @min: start from min included.
+ * @max: stop at max included.
  *
- * Return: If nmemb = 0, size = 0, or the function fails - NULL.
- *         Otherwise - a pointer to the allocated memory.
+ * Return: NULL if fail for pointer to the new array.
  */
-void *_calloc(unsigned int nmemb, unsigned int size)
+int *array_range(int min, int max)
 {
-	void *mem;
-	char *c;
-	unsigned int i;
+	int len;
+	int *arr;
+	int i;
 
-	if (nmemb == 0 || size == 0)
+	len = max - min + 1;
+	if (min > max)
+	{
 		return (NULL);
-
-	mem = malloc(size * nmemb);
-
-	if (mem == NULL)
+	}
+	arr = (int *)malloc(len * sizeof(int));
+	if (arr == NULL)
+	{
 		return (NULL);
+	}
 
-	c = mem;
+	for (i = min; i <= max; i++)
+	{
+		arr[i] = i;
+	}
 
-	for (i = 0; i < (size * nmemb); i++)
-		c[i] = '\0';
-
-	return (mem);
+	return (arr);
 }
