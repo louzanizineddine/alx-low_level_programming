@@ -5,7 +5,7 @@
  * @head: head of the list.
  * @n: int to insert.
  *
- * Return: adress of the new node 
+ * Return: adress of the new node
  */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
